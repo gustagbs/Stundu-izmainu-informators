@@ -1,6 +1,6 @@
 import tkinter as tk
 import sqlite3
-from programasii import izmainas
+from user_interface_code import izmainas
 def process(kl_sar,izmainas_sar,dienaa,kl_index):
     skol=[]
     for sk in skol_sar:
