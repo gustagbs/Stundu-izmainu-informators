@@ -108,22 +108,22 @@ class izmainas(tk.Frame):
 
         with open(filename, 'r') as csv_file:
             csv_file_reader = csv.reader(csv_file)
-            next(csv_file_reader)  # Skip header if present
+            next(csv_file_reader)  
             
-            # Connect to SQLite database
+       
             savien = sqlite3.connect("saraksti.db")
             cursor = savien.cursor()    
             cursor.execute("drop table if exists izmainas")
-            # Create table if not exists
+        
             cursor.execute("CREATE TABLE IF NOT EXISTS izmainas (Skolotaajs TEXT, Stunda_1 TEXT, Stunda_2 TEXT, Stunda_3 TEXT, Stunda_4 TEXT, Stunda_5 TEXT, Stunda_6 TEXT, Stunda_7 TEXT, Stunda_8 TEXT, Stunda_9 TEXT, Stunda_10 TEXT);")
             
-            # Iterate over each row in the CSV file
+        
             for row in csv_file_reader:
-                # Assign values from the current row to variables
+                
                 sk, pirma, otra, tresa, ceturt, piekta, sesta, septita, astota, devita, desmit = row
                 
                 try:
-                    # Execute INSERT statement with the current row values
+              
                     cursor.execute("REPLACE INTO izmainas VALUES (?,?,?,?,?,?,?,?,?,?,?)", (sk, pirma, otra, tresa, ceturt, piekta, sesta, septita, astota, devita, desmit))
                     print("Values inserted successfully.")
                 except sqlite3.Error as error:
@@ -131,7 +131,7 @@ class izmainas(tk.Frame):
             cursor.execute("drop table if exists diena")
             cursor.execute("CREATE TABLE diena(Diena TEXT);")
             cursor.execute("INSERT INTO diena (Diena) VALUES(?)",(additional,))
-            # Commit changes to the database and close the connection
+
             savien.commit()
             cursor.execute("SELECT * FROM izmainas")
             savien.close()
