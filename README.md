@@ -12,9 +12,13 @@ Programmas darītais
 Ko dara programmā šī funkcija
 #### Instalēšana:
 Visas pip instalējamās bibliotēkas, pa vienai katrā rindā
+
 -tikinter
+
 -sqlite3
+
 -csv
+
 -tabulate
 #### Lietošana:
 Augšupielādēt visus failus un salikt tos vienā mapē.
