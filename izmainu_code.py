@@ -5,7 +5,7 @@ def process(kl_sar,izmainas_sar,dienaa,kl_index):
     skol=[]
     for sk in skol_sar:
         skol.append(sk[0])
-    klasunames = {"_12a": "12a","_12b": "12b"}
+    klasunames = {"_12a": "12a","_12b": "12b"} #tabulu nosaukumu atšifrējumi bez _
     
     for row in kl_sar:   #panem visu dotas klases sarakstu
 
@@ -36,22 +36,22 @@ def process(kl_sar,izmainas_sar,dienaa,kl_index):
 
                                         if klasunames.get(kl_index) in izmainas.split(":"): #ja izmaina ir vienada ar sobrid parskatamao klasi
                                             
-                                            paga=dieena[m].split(":")
-                                            if izmainas_l[0] not in paga:
+                                            pagaidu=dieena[m].split(":")
+                                            if izmainas_l[0] not in pagaidu:
                                                 if dieena[m]=="-":
                                                     dieena[m]=izmainas_l[0]
                                                 else:
-                                                    paga.append(izmainas_l[0])
+                                                    pagaidu.append(izmainas_l[0])
                                                     delimiter=":"
-                                                    rahh=delimiter.join(paga)
-                                                    dieena[m]=delimiter.join(paga) #nomaina stundu saraksta uz šo skolotāju
+                                      
+                                                    dieena[m]=delimiter.join(pagaidu) #nomaina stundu saraksta uz šo skolotāju
                                         #if row[m]
                                         if izm[0] in dieena[m].split(":") and klasunames.get(kl_index) not in izmainas_l[m]: #ja seit butu jabut stundai ar šo skolotāju bet nav, ielieku brivstudnu
-                                            paga=dieena[m].split(":")
-                                            paga.remove(izmainas_l[0]) #šis viss domāts specgadījumiem kad ir vairak par 1 stundu klasei reizee utt
-                                            if len(paga)!=0:
+                                            pagaidu=dieena[m].split(":")
+                                            pagaidu.remove(izmainas_l[0]) #šis viss domāts specgadījumiem kad ir vairak par 1 stundu klasei reizee utt
+                                            if len(pagaidu)!=0:
                                                 delimiter=":"
-                                                dieena[m]=delimiter.join(paga)
+                                                dieena[m]=delimiter.join(pagaidu)
                                                 if len(dieena[m])==0:
                                                     dieena[m]="-"
                                                 ...
@@ -76,7 +76,7 @@ cursor.execute("SELECT * from diena;")
 days=cursor.fetchall()
 day=days[0][0].strip()
 
-klases=["_12a","_12b"]
+klases=["_12a","_12b"] #šeit būtu jābūt klasēm kuras ir datubāze, tie ir nosaukumi tabulām
 
 for klaseh in klases:
     #print(klaseh)
