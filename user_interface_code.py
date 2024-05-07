@@ -151,6 +151,4 @@ class izmainas(tk.Frame):
 
 
 
-root = tk.Tk()
-app = izmainas(master=root)
-app.mainloop()
+

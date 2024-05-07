@@ -1,4 +1,6 @@
 import tkinter as tk
+
+from tabulate import tabulate
 import sqlite3
 from user_interface_code import izmainas
 def process(kl_sar,izmainas_sar,dienaa,kl_index):
@@ -63,8 +65,13 @@ def process(kl_sar,izmainas_sar,dienaa,kl_index):
                 if rower in skol:
                     skol.remove(rower)
 
-            
-    print(dieena)
+    cursor.execute("DROP TABLE IF EXISTS pab_izm;")     
+    cursor.execute("CREATE TABLE pab_izm(Klase TEXT,Stunda_1 TEXT, Stunda_2 TEXT, Stunda_3 TEXT, Stunda_4 TEXT, Stunda_5 TEXT, Stunda_6 TEXT, Stunda_7 TEXT, Stunda_8 TEXT, Stunda_9 TEXT, Stunda_10 TEXT);")
+    cursor.execute("INSERT INTO pab_izm VALUES(?,?,?,?,?,?,?,?,?,?,?)",(klasunames.get(kl_index),dieena[1],dieena[2],dieena[3],dieena[4],dieena[5],dieena[6],dieena[7],dieena[8],dieena[9],dieena[10]))
+    cursor.execute("SELECT * FROM pab_izm")
+    rows = cursor.fetchall()
+    columns = [col[0] for col in cursor.description]
+    print(tabulate(rows, headers=columns, tablefmt="fancy_grid"))
 root = tk.Tk()
 app = izmainas(master=root)
 app.mainloop()
@@ -86,7 +93,7 @@ for klaseh in klases:
 
     cursor.execute("SELECT * FROM izmainas;")
     skol_sar=(cursor.fetchall())
-    print(klaseh)
+    
     process(klases_saraksts,skol_sar,day,klaseh)
     
 
