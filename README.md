@@ -23,7 +23,7 @@ Visas pip instalējamās bibliotēkas, pa vienai katrā rindā
 #### Lietošana:
 -  Augšupielādēt visus failus un salikt tos vienā mapē.
 
--Šo mapi atvērt, kādā kodu redaktora, kā piemēram Visual Studio Code. 
+- Šo mapi atvērt, kādā kodu redaktora, kā piemēram Visual Studio Code. 
 
 - Palaižot failu izmainu_code.py atvērsies logs ar lietotāju saskarni. 
 
