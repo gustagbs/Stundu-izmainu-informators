@@ -2,8 +2,8 @@
 #### Apraksts:
 Programma “Stundu izmaiņu informātors” ir programma, kas aptrādā datus un izmantojot datubāzes, veido galaproduktu. 
 Produkts sastāvēs gan no saskarnes, gan datubāzēm. 
-Programmas funckijas nodrošinās vēlamu izvadīto rezultātu. Programmatūras mērķis ir sniegt ērtāk uzskatāmas stundu izmaiņas skolēniem, nemainot ierasato izmaiņu ievades kārtību skolēniem.
-fds
+Programmas funckijas nodrošinās vēlamu izvadīto rezultātu. Programmatūras mērķis ir sniegt ērtāk uzskatāmas stundu izmaiņas skolēniem, nemainot ierasato izmaiņu ievades kārtību skolotājiem.
+
 Programmas darītais
 -PROGRAMMAS LIETOTĀJU SASKARNE
 
@@ -27,11 +27,11 @@ Visas pip instalējamās bibliotēkas, pa vienai katrā rindā
 
 - Palaižot failu izmainu_code.py atvērsies logs ar lietotāju saskarni. 
 
-- Šajā logā iespējams ievadīt stundu izmaiņas. (IZMAIŅĀM JABŪT PAREIZĀ FORMĀTĀ => izvēloties skolotāju, katrā stundā jānorāda vai nu klase, vai zīme "-" (stundas nav)) Programma nav paredzēta uzķert ievades kļūdas, tāpēc tās darbība ir atkarīga no lietotāja precizitātes. 
+- Šajā logā iespējams ievadīt stundu izmaiņas. (IZMAIŅĀM JABŪT PAREIZĀ FORMĀTĀ => izvēloties skolotāju, katrā stundā jānorāda vai nu klase, vai zīme "-" (stundas nav)) Programma nav paredzēta uzķert ievades kļūdas, tāpēc tās darbība ir atkarīga no lietotāja precizitātes. Ja skolotājai ir vairāk par 1 stundu vienā laukā, tad klases atdala ar : bez atstarpes. ( Piem: 12a:12b)
 
 - Apakšējā labajā stūri vēl ir jāizvēlas kurai dienai ir ievadītas izmaiņas. 
 
-- Kad viss ir pareizi savadīts, jāuzspiež poga "saglabāt" un fails jasaglabā kaut kur datorā.
+- Kad viss ir pareizi savadīts, jāuzspiež poga "saglabāt" un fails jasaglabā kaut kur datorā. Tad saskarne ir jāaizver ciet.
 
 - Pēc šī tiks izvadīti laboti stundu saraksti klasēm.
 TĀKĀ PROGRAMMAS DARBĪBA IR ATKARĪGA NO STUNDU SARAKSTU DATUBĀZES(KURAS SKOLAI NAV!), UN AUTORAM BIJA SLINKUMS VADĪT NESKAITĀMI DAUDZ SARAKSTUS, PROGRAMMA NEVAR IZVEIDOT SARAKSTUS VISĀM KLASĒM.
