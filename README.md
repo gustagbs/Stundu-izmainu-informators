@@ -21,9 +21,11 @@ Visas pip instalējamās bibliotēkas, pa vienai katrā rindā
 
 -tabulate
 #### Lietošana:
--  Augšupielādēt visus failus un salikt tos vienā mapē.
+-  Augšupielādēt failus - izmainas_code.py, user_interface_code.py, saraksti.db un salikt tos vienā mapē.
 
-- Šo mapi atvērt, kādā kodu redaktora, kā piemēram Visual Studio Code. 
+- Šo mapi atvērt, kādā kodu redaktora, kā piemēram Visual Studio Code.
+
+- Obligāti iepriekš nolādēt visas augstāk norādītās bibliotēkas
 
 - Palaižot failu izmainu_code.py atvērsies logs ar lietotāju saskarni. 
 
@@ -37,4 +39,4 @@ Visas pip instalējamās bibliotēkas, pa vienai katrā rindā
 TĀKĀ PROGRAMMAS DARBĪBA IR ATKARĪGA NO STUNDU SARAKSTU DATUBĀZES(KURAS SKOLAI NAV!), UN AUTORAM BIJA SLINKUMS VADĪT NESKAITĀMI DAUDZ SARAKSTUS, PROGRAMMA NEVAR IZVEIDOT SARAKSTUS VISĀM KLASĒM.
 Ja nu gadījuma interesē reāli piemēri var izveidot saraksti.db datubāze klašu stundu sarakstus. Pēc parauga var saprast kā sataisīt sarakstu. Nosaukumam tabulai jābūt _xy x-cipars y-burts. Man nebija visam laiks
 #### Licence:
-Licence
+Apache 2.0
