@@ -72,6 +72,8 @@ def process(kl_sar,izmainas_sar,dienaa,kl_index):
     rows = cursor.fetchall()
     columns = [col[0] for col in cursor.description]
     print(tabulate(rows, headers=columns, tablefmt="fancy_grid"))
+
+
 root = tk.Tk()
 app = izmainas(master=root)
 app.mainloop()

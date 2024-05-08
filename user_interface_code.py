@@ -77,9 +77,9 @@ class izmainas(tk.Frame):
 
 
     def save_inputs(self):
-        global additional
+        
         additional = self.additional_var.get()
-        print(additional)
+        
         # save lodzins
         filename = filedialog.asksaveasfilename(defaultextension=".csv")
         if not filename:
