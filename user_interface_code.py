@@ -57,7 +57,7 @@ class izmainas(tk.Frame):
         teacher_var = tk.StringVar(self.inputram)
         teacher_var.set("Izvēlies skolotāju")
 
-        teacher_dropdown = tk.OptionMenu(self.inputram, teacher_var, "Z.Skrastiņa", "R.Skara-Mincāne", "M.Priedītis","A.Deksne","D.Feldhūne")#Šeir ir jāpapapildina ja grib
+        teacher_dropdown = tk.OptionMenu(self.inputram, teacher_var, "Z.Skrastiņa", "R.Skara-Mincāne", "M.Priedītis","A.Deksne","D.Feldhūne","I.Kažoka","V.Vintere","I.Purmale")#Šeir ir jāpapapildina ja grib
         teacher_dropdown.grid(row=len(self.rows)+1, column=0)
         new_row.append(teacher_dropdown)
 
