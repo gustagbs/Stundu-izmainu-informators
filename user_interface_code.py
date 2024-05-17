@@ -18,7 +18,7 @@ class izmainas(tk.Frame):
 
 
 
-        # Option menu for additional selection
+        # dienas izvēlnes poga
         self.additional_var = tk.StringVar(self)
         self.additional_var.set("Diena")
         self.additional_dropdown = tk.OptionMenu(self, self.additional_var, "Pirmdiena", "Otrdiena", "Trešdiena","Ceturdiena","Piektdiena")
@@ -77,7 +77,7 @@ class izmainas(tk.Frame):
 
 
     def save_inputs(self):
-        
+        #dienas mainīgais
         additional = self.additional_var.get()
         
         # save lodzins
@@ -125,7 +125,7 @@ class izmainas(tk.Frame):
                 try:
               
                     cursor.execute("REPLACE INTO izmainas VALUES (?,?,?,?,?,?,?,?,?,?,?)", (sk, pirma, otra, tresa, ceturt, piekta, sesta, septita, astota, devita, desmit))
-                    print("Values inserted successfully.")
+                    print("Values inserted successfully.") #ievieto ievadītās izmaiņas sql datubāzes tabulā izmainas
                 except sqlite3.Error as error:
                     print("Error occurred:", error)
             cursor.execute("drop table if exists diena")
