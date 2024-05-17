@@ -3,12 +3,12 @@ import tkinter as tk
 from tabulate import tabulate
 import sqlite3
 from user_interface_code import izmainas
-def process(kl_sar,izmainas_sar,dienaa,kl_index):
+def process(kl_sar,izmainas_sar,dienaa,kl_index): #tiek definēta funkcija, kurai tiek padoti 4 manīgie. Saraksts ar stundu sarakstu attiecīgai klasei, izmaiņu saraksts, diena un attiecīgās klases index.
     skol=[]
     for sk in skol_sar:
         skol.append(sk[0])
-    klasunames = {"_12a": "12a","_12b": "12b"} #tabulu nosaukumu atšifrējumi bez _
-    
+    klasunames = {"_12a": "12a","_12b": "12b"} #tabulu nosaukumu atšifrējumi bez _, šajā vietā nepieciešams klases index, jo tabulu nosaukumi sql datubāzē nevar sākties ar ciparu.
+    #pamatcikls
     for row in kl_sar:   #panem visu dotas klases sarakstu
 
         
@@ -16,15 +16,15 @@ def process(kl_sar,izmainas_sar,dienaa,kl_index):
             #print(row)
             dieena=[row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10]] #parversh listaa
             
-  
-            for rowe in dieena: #nem pa vienam stundas
+              #pamatcikla beigas
+            for rowe in dieena: #nem pa vienam stundas #stundu cikla sākums
                 
                 #print(rowe)
                 for rower in rowe.split(":"):
                     if rower in skol: #ja tas stundas skolotajai ir izmainas 
                         
                         #print(rowe)
-                        for izm in izmainas_sar: #iet cauri izmainam
+                        for izm in izmainas_sar: #iet cauri izmainam #izmaiņu cikla sākums
                             if izm[0]==rower:
                                 izmainas_l=[izm[0],izm[1],izm[2],izm[3],izm[4],izm[5],izm[6],izm[7],izm[8],izm[9],izm[10]]#list ar skolotajas izmainam
                                 m=0 #lai palidzetu kontrolet kura stunda
@@ -76,7 +76,7 @@ def process(kl_sar,izmainas_sar,dienaa,kl_index):
 
 root = tk.Tk()
 app = izmainas(master=root) #atver UI
-app.mainloop()
+app.mainloop() 
 
 savien = sqlite3.connect("saraksti.db")
 cursor = savien.cursor()    
@@ -87,7 +87,7 @@ day=days[0][0].strip()
 
 klases=["_12a","_12b"] #šeit būtu jābūt klasēm kuras ir datubāze, tie ir nosaukumi tabulām
 
-for klaseh in klases:
+for klaseh in klases: #pa vienam funkcijai process tiek padoti klašu saraksti.
     #print(klaseh)
     az = f"SELECT * FROM {klaseh}"
     cursor.execute(az)
